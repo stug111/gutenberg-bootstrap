@@ -8,6 +8,11 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
-    "cgb-scripts": "1.15.0"
+    "bootstrap": "^4.3.1",
+    "cgb-scripts": "1.15.0",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.6"
   }
 }

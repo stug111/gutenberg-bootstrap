@@ -27,6 +27,9 @@ function gutenberg_bootstrap_block_assets() { // phpcs:ignore
 		array( 'wp-editor' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
+
+	wp_enqueue_script( 'popper-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array( 'jquery' ), '1.14.3', true );
+	wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array( 'jquery' ), '4.1.3', true );
 }
 
 // Hook: Frontend assets.
@@ -62,3 +65,19 @@ function gutenberg_bootstrap_editor_assets() { // phpcs:ignore
 
 // Hook: Editor assets.
 add_action( 'enqueue_block_editor_assets', 'gutenberg_bootstrap_editor_assets' );
+
+
+// Create custom category
+function gutenberg_bootstrap_block_categories ( $categories ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' 	=> 'bootstrap',
+				'title'	=> __( 'Bootstrap', 'bootstrap' ),
+			)
+		)
+	);
+}
+add_filter( 'block_categories', 'gutenberg_bootstrap_block_categories', 10, 2 );
+add_theme_support( 'align-wide' );
