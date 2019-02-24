@@ -1,35 +1,39 @@
 import './style.scss';
 import './editor.scss';
-import Alert from '../components/Alert.jsx';
+import Badge from '../components/Badge.jsx';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, InspectorControls } = wp.editor;
+const { InspectorControls, RichText } = wp.editor;
 const { SelectControl, ToggleControl, PanelBody } = wp.components;
 
-registerBlockType( 'bootstrap/alert', {
-	title: __( 'Alert', 'bootstrap' ),
+registerBlockType( 'bootstrap/badge', {
+	title: __( 'Badge', 'bootstrap' ),
 	icon: 'shield',
 	category: 'bootstrap',
-	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'alert', 'bootstrap' ) ],
+	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'Badge', 'bootstrap' ) ],
 	attributes: {
 		type: {
 			type: 'string',
 			default: 'info',
 		},
-		close: {
+		text: {
+			type: 'string',
+			default: 'text',
+		},
+		round: {
 			type: 'boolean',
 			default: false,
 		},
 	},
 	edit: props => {
-		const { attributes, className, setAttributes } = props;
-		const { type, close } = attributes;
+		const { className, attributes, setAttributes } = props;
+		const { type, text, round } = attributes;
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={ __( 'Alert Settings', 'bootstrap' ) }>
+					<PanelBody title={ __( 'Badge Settings', 'bootstrap' ) }>
 						<SelectControl
 							label={ __( 'Message Type', 'bootstrap' ) }
 							value={ type }
@@ -43,29 +47,30 @@ registerBlockType( 'bootstrap/alert', {
 								{ label: __( 'Light', 'bootstrap' ), value: 'light' },
 								{ label: __( 'Dark', 'bootstrap' ), value: 'dark' },
 							] }
-							help={ __( 'Select the type of your alert.', 'bootstrap' ) }
+							help={ __( 'Select the type of your badge.', 'bootstrap' ) }
 							onChange={ type => setAttributes( { type } ) }
 						/>
 						<ToggleControl
-							label={ __( 'Close button', 'bootstrap' ) }
-							checked={ close }
-							onChange={ close => setAttributes( { close } ) }
+							label={ __( 'Make badges more rounded', 'bootstrap' ) }
+							checked={ round }
+							onChange={ round => setAttributes( { round } ) }
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<Alert className={ className } type={ type } close={ close }>
-					<InnerBlocks />
-				</Alert>
+				<Badge className={ className } type={ type } round={ round }>
+					<RichText value={ text } onChange={ text => setAttributes( { text } ) } />
+				</Badge>
 			</Fragment>
 		);
 	},
 	save: props => {
 		const { attributes } = props;
-		const { type, close } = attributes;
+		const { type, text, round } = attributes;
+
 		return (
-			<Alert type={ type } close={ close }>
-				<InnerBlocks.Content />
-			</Alert>
+			<Badge type={ type } round={ round }>
+				<RichText.Content value={ text } />
+			</Badge>
 		);
 	},
 } );
