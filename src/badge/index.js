@@ -1,6 +1,6 @@
 import './style.scss';
 import './editor.scss';
-import Badge from '../components/Badge.jsx';
+import Badge from '../components/Badge';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;

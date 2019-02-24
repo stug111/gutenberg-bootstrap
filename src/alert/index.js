@@ -1,6 +1,6 @@
 import './style.scss';
 import './editor.scss';
-import Alert from '../components/Alert.jsx';
+import Alert from '../components/Alert';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;

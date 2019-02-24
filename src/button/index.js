@@ -1,6 +1,6 @@
 import './style.scss';
 import './editor.scss';
-import ButtonCustom from '../components/Button.jsx';
+import ButtonCustom from '../components/Button';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;

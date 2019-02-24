@@ -15,3 +15,5 @@ import './block/block';
 import './alert/index';
 import './badge/index';
 import './button/index';
+import './container/index';
+import './row/index';
