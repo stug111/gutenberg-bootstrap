@@ -14,3 +14,4 @@ import 'popper.js';
 import './block/block';
 import './alert/index';
 import './badge/index';
+import './button/index';
