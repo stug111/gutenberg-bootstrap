@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Row = ( { children, className, row, ...attrs } ) => {
-	const classes = classnames( className, { row } );
+const Col = ( { children, className, ...attrs } ) => {
+	const classes = classnames( className );
 
 	return (
 		<div className={ classes } { ...attrs }>
@@ -11,14 +11,14 @@ const Row = ( { children, className, row, ...attrs } ) => {
 	);
 };
 
-Row.propTypes = {
+Col.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 };
 
-Row.defaultProps = {
-	children: 'Row',
+Col.defaultProps = {
+	children: 'Column',
 	className: '',
 };
 
-export default Row;
+export default Col;

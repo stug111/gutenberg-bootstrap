@@ -17,3 +17,4 @@ import './badge/index';
 import './button/index';
 import './container/index';
 import './row/index';
+import './col/index';

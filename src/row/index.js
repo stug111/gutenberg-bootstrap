@@ -34,7 +34,7 @@ registerBlockType( 'bootstrap/row', {
 	},
 	save: props => {
 		return (
-			<Row>
+			<Row row>
 				<InnerBlocks.Content />
 			</Row>
 		);
