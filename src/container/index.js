@@ -10,7 +10,6 @@ const { ToggleControl, PanelBody } = wp.components;
 
 registerBlockType( 'bootstrap/container', {
 	title: __( 'Container', 'bootstrap' ),
-	icon: 'shield',
 	category: 'bootstrap',
 	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'container', 'bootstrap' ) ],
 	attributes: {
@@ -41,9 +40,9 @@ registerBlockType( 'bootstrap/container', {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<Container className={ className } fluid={ fluid }>
+				<div>
 					<InnerBlocks />
-				</Container>
+				</div>
 			</Fragment>
 		);
 	},

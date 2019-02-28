@@ -6,13 +6,21 @@
 */
 @import "./scss/main";
 
-// Colors.
-$black: rgb(41, 41, 41);
-$white: #f4f4f4;
-$gray: #dedede;
-$green: #bada55;
-$red: orangered;
-
 a {
 	text-decoration: none;
+}
+
+[data-type*="bootstrap/row"],
+[data-type*="bootstrap/col"] {
+	border: 1px solid #e8e8e8;
+}
+
+.bootstrap-bloc-name {
+	color: #f2f2f2;
+	background: grey;
+	display: block;
+	font-size: 12px;
+	padding: 0 15px;
+	text-align: right;
+	width: 100%;
 }

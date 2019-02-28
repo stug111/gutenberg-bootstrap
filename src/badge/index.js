@@ -10,7 +10,6 @@ const { SelectControl, ToggleControl, PanelBody } = wp.components;
 
 registerBlockType( 'bootstrap/badge', {
 	title: __( 'Badge', 'bootstrap' ),
-	icon: 'shield',
 	category: 'bootstrap',
 	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'Badge', 'bootstrap' ) ],
 	attributes: {

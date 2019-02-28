@@ -8,10 +8,10 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+import './components/iconCategory';
 import 'bootstrap';
 import 'popper.js';
 
-import './block/block';
 import './alert/index';
 import './badge/index';
 import './button/index';

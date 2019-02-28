@@ -80,5 +80,5 @@ function gutenberg_bootstrap_block_categories ( $categories ) {
 	);
 }
 add_filter( 'block_categories', 'gutenberg_bootstrap_block_categories', 10, 2 );
+
 add_theme_support( 'align-wide' );
-add_theme_support( 'wp-block-styles' );

@@ -9,7 +9,6 @@ const { InnerBlocks } = wp.editor;
 
 registerBlockType( 'bootstrap/row', {
 	title: __( 'Row', 'bootstrap' ),
-	icon: 'shield',
 	category: 'bootstrap',
 	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'row', 'bootstrap' ) ],
 	attributes: {

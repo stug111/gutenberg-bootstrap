@@ -24,7 +24,6 @@ const {
 
 registerBlockType( 'bootstrap/button', {
 	title: __( 'Button', 'bootstrap' ),
-	icon: 'shield',
 	category: 'bootstrap',
 	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'Button', 'bootstrap' ) ],
 	attributes: {

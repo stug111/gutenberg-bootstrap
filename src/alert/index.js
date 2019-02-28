@@ -10,7 +10,6 @@ const { SelectControl, ToggleControl, PanelBody } = wp.components;
 
 registerBlockType( 'bootstrap/alert', {
 	title: __( 'Alert', 'bootstrap' ),
-	icon: 'shield',
 	category: 'bootstrap',
 	keywords: [ __( 'bootstrap', 'bootstrap' ), __( 'alert', 'bootstrap' ) ],
 	attributes: {
