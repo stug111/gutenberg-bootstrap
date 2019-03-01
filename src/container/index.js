@@ -1,6 +1,7 @@
 import './style.scss';
 import './editor.scss';
 import Container from '../components/Container';
+import BlockName from '../components/BlockName';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
@@ -27,7 +28,7 @@ registerBlockType( 'bootstrap/container', {
 		align: [ 'wide' ],
 	},
 	edit: props => {
-		const { className, attributes, setAttributes } = props;
+		const { className, attributes, setAttributes, name } = props;
 		const { fluid } = attributes;
 		return (
 			<Fragment>
@@ -40,7 +41,8 @@ registerBlockType( 'bootstrap/container', {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div>
+				<div className={ className }>
+					<BlockName name={ name } />
 					<InnerBlocks />
 				</div>
 			</Fragment>

@@ -10,17 +10,29 @@ a {
 	text-decoration: none;
 }
 
-[data-type*="bootstrap/row"],
-[data-type*="bootstrap/col"] {
-	border: 1px solid #e8e8e8;
+[data-type="bootstrap/container"],
+[data-type="bootstrap/row"],
+[data-type="bootstrap/col"] {
+	> .editor-block-list__block-edit::after {
+		z-index: 0;
+		content: "";
+		position: absolute;
+		outline: 1px solid rgba(#673ab7, 0.5);
+		transition: outline 0.1s linear;
+		pointer-events: none;
+		right: -14px;
+		left: -14px;
+		top: -14px;
+		bottom: -14px;
+	}
 }
 
-.bootstrap-bloc-name {
-	color: #f2f2f2;
-	background: grey;
-	display: block;
-	font-size: 12px;
-	padding: 0 15px;
-	text-align: right;
-	width: 100%;
-}
+// .block-name-bootstrap {
+// 	color: #f2f2f2;
+// 	background: grey;
+// 	display: block;
+// 	font-size: 12px;
+// 	padding: 0 15px;
+// 	text-align: right;
+// 	width: 100%;
+// }

@@ -3,6 +3,7 @@ import './editor.scss';
 import classnames from 'classnames';
 import Col from '../components/Col';
 import isAttributes from './attribures';
+import BlockName from '../components/BlockName';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
@@ -19,7 +20,7 @@ registerBlockType( 'bootstrap/col', {
 		anchor: true,
 	},
 	edit: props => {
-		const { className, attributes, setAttributes } = props;
+		const { className, attributes, setAttributes, name } = props;
 		const { colXL, colLG, colMD, colSM, colXS } = attributes;
 		const { offsetXL, offsetLG, offsetMD, offsetSM, offsetXS } = attributes;
 		const { orderXL, orderLG, orderMD, orderSM, orderXS } = attributes;
@@ -152,6 +153,7 @@ registerBlockType( 'bootstrap/col', {
 					{ orderSettings }
 				</InspectorControls>
 				<div className={ className }>
+					<BlockName name={ name } />
 					<InnerBlocks />
 				</div>
 			</Fragment>

@@ -1,6 +1,7 @@
 import './style.scss';
 import './editor.scss';
 import Row from '../components/Row';
+import BlockName from '../components/BlockName';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
@@ -22,9 +23,10 @@ registerBlockType( 'bootstrap/row', {
 		align: [ 'wide' ],
 	},
 	edit: props => {
-		const { className } = props;
+		const { className, name } = props;
 		return (
 			<Fragment>
+				<BlockName name={ name } />
 				<Row className={ className }>
 					<InnerBlocks />
 				</Row>
