@@ -14,6 +14,11 @@ const Col = ( {
 	offsetMd,
 	offsetSm,
 	offsetXs,
+	orderXl,
+	orderLg,
+	orderMd,
+	orderSm,
+	orderXs,
 	...attrs
 } ) => {
 	const classes = classnames( className, {
@@ -27,6 +32,11 @@ const Col = ( {
 		[ `offset-md-${ offsetMd }` ]: offsetMd,
 		[ `offset-sm-${ offsetSm }` ]: offsetSm,
 		[ `offset-${ offsetXs }` ]: offsetXs,
+		[ `order-xl-${ orderXl }` ]: orderXl,
+		[ `order-lg-${ orderLg }` ]: orderLg,
+		[ `order-md-${ orderMd }` ]: orderMd,
+		[ `order-sm-${ orderSm }` ]: orderSm,
+		[ `order-${ orderXs }` ]: orderXs,
 	} );
 
 	return (
@@ -49,6 +59,11 @@ Col.propTypes = {
 	offsetMd: PropTypes.number,
 	offsetSm: PropTypes.number,
 	offsetXs: PropTypes.number,
+	orderXl: PropTypes.number,
+	orderLg: PropTypes.number,
+	orderMd: PropTypes.number,
+	orderSm: PropTypes.number,
+	orderXs: PropTypes.number,
 };
 
 Col.defaultProps = {
@@ -64,6 +79,11 @@ Col.defaultProps = {
 	offsetMd: 0,
 	offsetSm: 0,
 	offsetXs: 0,
+	orderXl: 0,
+	orderLg: 0,
+	orderMd: 0,
+	orderSm: 0,
+	orderXs: 0,
 };
 
 export default Col;

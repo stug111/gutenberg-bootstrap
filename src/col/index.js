@@ -3,7 +3,6 @@ import './editor.scss';
 import classnames from 'classnames';
 import Col from '../components/Col';
 import isAttributes from './attribures';
-import BlockName from '../components/BlockName';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
@@ -20,7 +19,7 @@ registerBlockType( 'bootstrap/col', {
 		anchor: true,
 	},
 	edit: props => {
-		const { className, attributes, setAttributes, name } = props;
+		const { className, attributes, setAttributes } = props;
 		const { colXL, colLG, colMD, colSM, colXS } = attributes;
 		const { offsetXL, offsetLG, offsetMD, offsetSM, offsetXS } = attributes;
 		const { orderXL, orderLG, orderMD, orderSM, orderXS } = attributes;
@@ -72,35 +71,35 @@ registerBlockType( 'bootstrap/col', {
 					value={ offsetXL }
 					onChange={ value => setAttributes( { offsetXL: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="LG"
 					value={ offsetLG }
 					onChange={ value => setAttributes( { offsetLG: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="MD"
 					value={ offsetMD }
 					onChange={ value => setAttributes( { offsetMD: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="XS"
 					value={ offsetSM }
 					onChange={ value => setAttributes( { offsetSM: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="SM"
 					value={ offsetXS }
 					onChange={ value => setAttributes( { offsetXS: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 			</PanelBody>
 		);
@@ -112,35 +111,35 @@ registerBlockType( 'bootstrap/col', {
 					value={ orderXL }
 					onChange={ value => setAttributes( { orderXL: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="LG"
 					value={ orderLG }
 					onChange={ value => setAttributes( { orderLG: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="MD"
 					value={ orderMD }
 					onChange={ value => setAttributes( { orderMD: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="XS"
 					value={ orderSM }
 					onChange={ value => setAttributes( { orderSM: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 				<RangeControl
 					label="SM"
 					value={ orderXS }
 					onChange={ value => setAttributes( { orderXS: value } ) }
 					min={ 0 }
-					max={ 12 }
+					max={ 11 }
 				/>
 			</PanelBody>
 		);
@@ -153,15 +152,35 @@ registerBlockType( 'bootstrap/col', {
 					{ orderSettings }
 				</InspectorControls>
 				<div className={ className }>
-					<BlockName name={ name } />
 					<InnerBlocks />
 				</div>
 			</Fragment>
 		);
 	},
 	save: props => {
+		const { attributes } = props;
+		const { colXL, colLG, colMD, colSM, colXS } = attributes;
+		const { offsetXL, offsetLG, offsetMD, offsetSM, offsetXS } = attributes;
+		const { orderXL, orderLG, orderMD, orderSM, orderXS } = attributes;
+
 		return (
-			<Col>
+			<Col
+				xl={ colXL }
+				lg={ colLG }
+				md={ colMD }
+				sm={ colSM }
+				xs={ colXS }
+				offsetXl={ offsetXL }
+				offsetLg={ offsetLG }
+				offsetMd={ offsetMD }
+				offsetSm={ offsetSM }
+				offsetXs={ offsetXS }
+				orderXl={ orderXL }
+				orderLg={ orderLG }
+				orderMd={ orderMD }
+				orderSm={ orderSM }
+				orderXs={ orderXS }
+			>
 				<InnerBlocks.Content />
 			</Col>
 		);
